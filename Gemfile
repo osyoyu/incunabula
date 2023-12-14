@@ -10,3 +10,7 @@ gem "ridgepole"
 group :development, :test do
   gem "debug"
 end
+
+group :development do
+  gem "rubocop"
+end
