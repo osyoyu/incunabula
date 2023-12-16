@@ -10,6 +10,7 @@ gem "ridgepole"
 group :development, :test do
   gem "debug"
   gem "rspec-rails"
+  gem "rspec-daemon"
 end
 
 group :development do
