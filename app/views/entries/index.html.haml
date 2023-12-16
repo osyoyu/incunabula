@@ -4,4 +4,4 @@
       - @entries.each do |entry|
         %tr
           %td= entry.published_at_formatted
-          %td= link_to(entry.title, entry_entries_path(entry_path: entry.entry_path))
+          %td= link_to(entry.display_title, entry_entries_path(entry_path: entry.entry_path))
