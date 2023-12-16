@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 gem "rails", "~> 7.1.2"
 
+gem "commonmarker", "~> 0.23"
+gem "haml"
 gem "sprockets-rails"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"

@@ -1,0 +1,7 @@
+%main
+  %table
+    %tbody
+      - @entries.each do |entry|
+        %tr
+          %td= entry.published_at_formatted
+          %td= link_to(entry.title, entry_entries_path(entry_path: entry.entry_path))

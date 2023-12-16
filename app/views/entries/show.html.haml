@@ -1,0 +1,11 @@
+- content_for :title, @entry.title
+
+%main
+  %article
+    %header
+      %h1= @entry.title
+      .date= @entry.published_at_formatted
+
+    %hr.header-main-divider
+
+    = @body_html

@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  font-weight: 400;
+}
+
+.site-header {
+  width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.logotype {
+  max-width: 300px;
+  height: 50px;
+  padding-left: 14px;
+
+  color: #ffffff;
+  background-color: #000000;
+  line-height: 50px;
+
+  font-size: 22px;
+}
+
+.logotype span.osyoyucom {
+  font-weight: 300;
+}
+
+.logotype span.breakpoint {
+  font-family: "Helvetica Neue";
+  font-weight: 900;
+}
+
+main {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 480px) {
+  .site-header {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  main {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+article {
+  margin-bottom: 60px;
+
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+article header h1 {
+  margin-bottom: 0.3em;
+
+  font-size: 24px;
+  font-weight: 600;
+}
+
+hr.header-main-divider {
+  margin: 1.2em auto 1.2em 0;
+  max-width: min(300px, 40%);
+  color: #bbb;
+}
+
+article h2 {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+article p {
+  margin-bottom: 1em;
+}
