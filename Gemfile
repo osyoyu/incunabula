@@ -8,6 +8,7 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "ridgepole"
+gem "tzinfo-data"
 
 group :development, :test do
   gem "debug"
