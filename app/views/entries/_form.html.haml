@@ -1,0 +1,13 @@
+= form_with(model: @entry) do |f|
+  %div
+    = f.label :title, "Title"
+    %br
+    = f.text_field :title
+  %div
+    = f.text_area :body
+  %div
+    = f.label :secret, "Secret"
+    %br
+    = text_field_tag :incunabula_admin_secret
+  %dib
+    = f.submit

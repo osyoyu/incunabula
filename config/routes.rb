@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :entries, path: '/breakpoint', only: [:index] do
+  resources :entries, path: '/breakpoint', only: [:index, :new, :edit, :create, :update] do
     collection do
       get '/*entry_path', to: 'entries#show', as: 'entry', constraints: { entry_path: %r|\d{4}/\d{2}/\d{2}/\d{6}| }
     end
