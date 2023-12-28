@@ -10,6 +10,10 @@ gem "puma", ">= 5.0"
 gem "ridgepole"
 gem "tzinfo-data"
 
+group :production do
+  gem "ddtrace", require: 'ddtrace/auto_instrument'
+end
+
 group :development, :test do
   gem "debug"
   gem "rspec-rails"
