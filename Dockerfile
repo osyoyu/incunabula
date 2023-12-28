@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y \
   git \
   libpq-dev \
   patch \
+  pkg-config \
   postgresql-client \
   xz-utils
 
