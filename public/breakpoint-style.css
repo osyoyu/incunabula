@@ -88,3 +88,15 @@ article h2 {
 article p {
   margin-bottom: 1em;
 }
+
+footer {
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 20px;
+}
+
+footer .ruby-description {
+  font-size: 12px;
+}
