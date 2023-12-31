@@ -4,6 +4,9 @@ create_table :entries do |t|
   t.datetime :published_at, null: false, precision: 0
   t.string :entry_path, null: false
   t.timestamps
+
+  t.index :published_at
+  t.index :published_at, name: "published_at_desc", order: :desc
 end
 
 # vim: set ft=ruby :

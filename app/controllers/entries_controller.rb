@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_action :require_admin_secret, only: [:create, :update]
 
   def index
-    @entries = Entry.all
+    @entries = Entry.all.order(published_at: :desc)
   end
 
   def show
