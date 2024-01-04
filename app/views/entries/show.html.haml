@@ -1,3 +1,18 @@
+- content_for :head do
+  %script{src: "https://b.st-hatena.com/js/bookmark_button.js", async: "async"}
+  -# Cannot be async/defer
+  %script{src: "https://s.hatena.ne.jp/js/HatenaStar.js"}
+  :javascript
+    Hatena.Star.SiteConfig = {
+      entryNodes: {
+        'article': {
+          uri: 'h1 a',
+          title: 'h1',
+          container: 'div.hatena-star',
+        },
+      },
+    }
+
 - content_for :title, @entry.title
 
 %article
@@ -11,3 +26,4 @@
   = @body_html
 
   %footer.article-footer
+    = render 'hatena'

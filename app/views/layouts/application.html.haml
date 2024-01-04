@@ -4,6 +4,8 @@
     %meta{charset: "UTF-8"}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
     %link{rel: "stylesheet", href: "/breakpoint-style.css"}
+    - if content_for?(:head)
+      = content_for(:head)
     %title= "#{content_for?(:title) ? "#{yield(:title)} | " : ""}osyoyu.com/breakpoint"
 
   %body
