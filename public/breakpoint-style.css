@@ -119,6 +119,10 @@ article p {
   margin-bottom: 1em;
 }
 
+article a {
+  color: #131384;
+}
+
 .hatena-star {
   margin-bottom: 10px;
   height: 24px;
