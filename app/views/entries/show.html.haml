@@ -1,12 +1,13 @@
 - content_for :title, @entry.title
 
-%main
-  %article
-    %header
-      %h1= @entry.display_title
-      - if !@entry.title.nil?
-        .date= @entry.published_at_formatted
+%article
+  %header.article-header
+    %h1= link_to @entry.display_title, entry_path(@entry)
+    - if !@entry.title.nil?
+      .date= @entry.published_at_formatted
 
-    %hr.header-main-divider
+  %hr.header-main-divider
 
-    = @body_html
+  = @body_html
+
+  %footer.article-footer

@@ -3,13 +3,15 @@
   padding: 0;
 }
 
+/* Site-global */
+
 body {
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
   font-weight: 400;
 }
 
-.site-header {
-  width: 950px;
+header.site-header {
+  max-width: 950px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
@@ -26,6 +28,7 @@ body {
   line-height: 50px;
 
   font-size: 22px;
+  font-family: "Helvetica Neue";
 }
 
 .logotype span.osyoyucom {
@@ -33,7 +36,6 @@ body {
 }
 
 .logotype span.breakpoint {
-  font-family: "Helvetica Neue";
   font-weight: 900;
 }
 
@@ -41,10 +43,22 @@ main {
   max-width: 950px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 40px;
+}
+
+footer.site-footer {
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+footer .ruby-description {
+  font-size: 12px;
 }
 
 @media screen and (max-width: 480px) {
-  .site-header {
+  header.site-header {
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -55,11 +69,17 @@ main {
 
     line-height: 1.6em;
   }
+
+  footer.site-header {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
-article {
-  margin-bottom: 60px;
 
+/* Article */
+
+article {
   font-size: 16px;
   line-height: 1.5em;
 }
@@ -71,7 +91,7 @@ article header h1 {
   font-weight: 600;
 }
 
-hr.header-main-divider {
+article hr.header-main-divider {
   margin: 1.2em auto 1.2em 0;
   max-width: min(300px, 40%);
   color: #bbb;
@@ -87,17 +107,4 @@ article h2 {
 
 article p {
   margin-bottom: 1em;
-}
-
-footer {
-  max-width: 950px;
-  margin-left: auto;
-  margin-right: auto;
-
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-footer .ruby-description {
-  font-size: 12px;
 }
