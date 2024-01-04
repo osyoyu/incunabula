@@ -108,3 +108,12 @@ article h2 {
 article p {
   margin-bottom: 1em;
 }
+
+.hatena-star {
+  margin-bottom: 10px;
+  height: 24px;
+}
+
+.hatena-bookmark {
+  height: 40px;
+}
