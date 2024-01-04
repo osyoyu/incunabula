@@ -15,7 +15,7 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    @entry = Entry.find(params[:id])
+    @entry = Entry.find_by!(entry_path: params[:entry_path])
   end
 
   def create
