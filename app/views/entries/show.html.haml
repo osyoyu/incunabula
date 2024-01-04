@@ -1,14 +1,17 @@
 - content_for :head do
   %script{src: "https://b.st-hatena.com/js/bookmark_button.js", async: "async"}
-  -# Cannot be async/defer
-  %script{src: "https://s.hatena.ne.jp/js/HatenaStar.js"}
+  %script{src: "https://s.hatena.ne.jp/js/HatenaStar.js", defer: "defer"}
   :javascript
-    Hatena.Star.SiteConfig = {
-      entryNodes: {
-        'article': {
-          uri: 'h1 a',
-          title: 'h1',
-          container: 'div.hatena-star',
+    Hatena = {
+      Star: {
+        SiteConfig: {
+          entryNodes: {
+            'article': {
+              uri: 'h1 a',
+              title: 'h1',
+              container: 'div.hatena-star',
+            },
+          },
         },
       },
     }
