@@ -59,18 +59,25 @@ footer .ruby-description {
 
 @media screen and (max-width: 480px) {
   header.site-header {
-    margin-left: 10px;
-    margin-right: 10px;
+    max-width: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+
+  .logotype {
+    max-width: 250px;
   }
 
   main {
-    margin-left: 20px;
-    margin-right: 20px;
-
-    line-height: 1.6em;
+    max-width: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
   }
 
-  footer.site-header {
+  footer.site-footer {
+    max-width: 100%;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -81,7 +88,7 @@ footer .ruby-description {
 
 article {
   font-size: 16px;
-  line-height: 1.5em;
+  line-height: 1.6em;
 }
 
 article header h1 {
