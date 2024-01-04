@@ -4,10 +4,22 @@
     %meta{charset: "UTF-8"}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
     %link{rel: "stylesheet", href: "/blog-style.css"}
+
+    %meta{name: "twitter:card", content: "summary"}
+    %meta{name: "twitter:site", content: "@osyoyu"}
+    %meta{name: "twitter:title", content: content_for?(:title) ? content_for(:title) : "osyoyu.com/blog"}
+
+    %meta{name: "og:type", content: "article"}
+    %meta{name: "og:title", content: content_for?(:title) ? content_for(:title) : "osyoyu.com/blog"}
+    %meta{name: "og:description", content: content_for?(:title) ? content_for(:title) : "osyoyu.com/blog"}
+    %meta{name: "og:site_name", content: "osyoyu.com/blog"}
+    %meta{name: "og:url", content: request.original_url}
+
     %link{rel: "author", href: "http://www.hatena.ne.jp/tomo_ari/"}
+
     - if content_for?(:head)
       = content_for(:head)
-    %title= "#{content_for?(:title) ? "#{yield(:title)} | " : ""}osyoyu.com/blog"
+    %title= "#{content_for?(:title) ? "#{yield(:title)} - " : ""}osyoyu.com/blog"
 
   %body
     %header.site-header
