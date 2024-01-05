@@ -17,8 +17,11 @@
 
     %link{rel: "author", href: "http://www.hatena.ne.jp/tomo_ari/"}
 
+    = render 'cloudflare_web_analytics'
+
     - if content_for?(:head)
       = content_for(:head)
+
     %title= "#{content_for?(:title) ? "#{yield(:title)} - " : ""}osyoyu.com/blog"
 
   %body
@@ -34,3 +37,5 @@
     %footer.site-footer
       .ruby-description
         = RUBY_DESCRIPTION
+      .privacy-notice
+        This site uses Cloudflare Analytics.
