@@ -33,6 +33,7 @@ header a {
 
   font-size: 22px;
   font-family: "Helvetica Neue";
+  font-feature-settings: "palt";
 }
 
 .logotype span.osyoyucom {
@@ -93,6 +94,7 @@ footer .ruby-description {
 article {
   font-size: 16px;
   line-height: 1.6em;
+  word-break: auto-phrase;
 }
 
 article header h1 {
@@ -100,6 +102,7 @@ article header h1 {
 
   font-size: 24px;
   font-weight: 600;
+  font-feature-settings: "palt";
 }
 
 article header a {
@@ -124,6 +127,7 @@ article h2 {
 
   font-size: 20px;
   font-weight: 600;
+  font-feature-settings: "palt";
 }
 
 article p {
