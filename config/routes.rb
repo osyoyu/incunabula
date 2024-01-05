@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :entries, path: '/blog', only: [:index, :new, :create, :update] do
+    # FIXME: There ought to be a better way to define this
     collection do
-      get '/*entry_path', to: 'entries#show', as: 'entry', constraints: { entry_path: %r|\d{4}/\d{2}/\d{2}/\d{6}| }
-      get '/*entry_path/edit', to: 'entries#edit', as: 'entry_edit', constraints: { entry_path: %r|\d{4}/\d{2}/\d{2}/\d{6}| }
+      get '/*entry_path', to: 'entries#show', as: 'custom_show', constraints: { entry_path: %r|\d{4}/\d{2}/\d{2}/\d{6}| }
+      get '/*entry_path/edit', to: 'entries#edit', as: 'custom_edit', constraints: { entry_path: %r|\d{4}/\d{2}/\d{2}/\d{6}| }
     end
   end
 end
