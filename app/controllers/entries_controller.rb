@@ -31,7 +31,7 @@ class EntriesController < ApplicationController
 
     ActiveRecord::Base.transaction do
       @entry.save!
-      redirect_to custom_show_entries_path(entry_path: @entry.entry_path)
+      redirect_to entry_friendly_path(entry_path: @entry.entry_path)
     rescue ActiveRecord::RecordInvalid
       render :new
     end
@@ -45,7 +45,7 @@ class EntriesController < ApplicationController
 
     ActiveRecord::Base.transaction do
       @entry.save!
-      redirect_to custom_show_entries_path(entry_path: @entry.entry_path)
+      redirect_to entry_friendly_path(entry_path: @entry.entry_path)
     rescue ActiveRecord::RecordInvalid
       render :edit
     end
