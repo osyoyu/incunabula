@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   scope :blog do
     root to: 'entries#index'
     resources :entries, only: [:new, :create, :update]
+    resources :feed, only: [:show]
 
     # Give lowest precendence
     get '/*entry_path', to: 'entries#show', as: 'entry_friendly', constraints: { entry_path: %r|\d{4}/\d{2}/\d{2}/\d{6}| }
