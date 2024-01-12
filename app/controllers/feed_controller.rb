@@ -15,6 +15,9 @@ class FeedController < ApplicationController
           item.link = entry_friendly_url(entry_path: entry.entry_path)
           item.title = entry.display_title
           item.date = entry.published_at.iso8601
+
+          item.content.type = "html"
+          item.content.content = entry.render_to_html
         end
       end
     end
