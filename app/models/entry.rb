@@ -10,6 +10,10 @@ class Entry < ApplicationRecord
     published_at.strftime('%Y/%m/%d')
   end
 
+  def atom_feed_tag
+    "tag:osyoyu.com,#{published_at.strftime("%Y-%m-%d")}:blog/#{Digest::MD5.hexdigest(id.to_s)[0,16]}"
+  end
+
   def render_to_html
     CommonMarker.render_html(self.body, [:DEFAULT, :HARDBREAKS, :UNSAFE, :FOOTNOTES], [:table]).html_safe
   end
