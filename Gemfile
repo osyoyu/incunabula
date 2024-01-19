@@ -22,6 +22,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "rspec-daemon"
   gem "rspec-rails"
+  gem "ruby-lsp-rspec", require: false
 end
 
 group :development do
