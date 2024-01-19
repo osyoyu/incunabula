@@ -1,3 +1,5 @@
 inherit_from:
   - https://raw.githubusercontent.com/cookpad/styleguide/master/.rubocop.yml
 
+AllCops:
+  TargetRubyVersion: 3.3
