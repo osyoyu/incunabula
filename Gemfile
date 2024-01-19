@@ -18,6 +18,7 @@ end
 group :development, :test do
   gem "debug"
 
+  gem "capybara"
   gem "factory_bot_rails"
   gem "rspec-daemon"
   gem "rspec-rails"
