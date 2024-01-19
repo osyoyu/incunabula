@@ -17,8 +17,10 @@ end
 
 group :development, :test do
   gem "debug"
-  gem "rspec-rails"
+
+  gem "factory_bot_rails"
   gem "rspec-daemon"
+  gem "rspec-rails"
 end
 
 group :development do
