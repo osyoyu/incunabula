@@ -4,11 +4,11 @@ gem "rails", "~> 7.1.2"
 
 gem "commonmarker", "~> 0.23"
 gem "haml"
-gem "sprockets-rails"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "ridgepole"
 gem "rss"
+gem "sprockets-rails"
 gem "tzinfo-data"
 
 group :production do
