@@ -10,7 +10,9 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.from_uploaded_file(params[:file])
+    Image.strip_exif!(params[:file].path)
     @image.upload_to_s3(params[:file].read)
+
     ActiveRecord::Base.transaction do
       @image.save!
     end

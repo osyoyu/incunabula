@@ -14,6 +14,10 @@ class Image < ApplicationRecord
     )
   end
 
+  def self.strip_exif!(path)
+    system('exiftool', '-overwrite_original_in_place', '-EXIF=', path, exception: true)
+  end
+
   def public_url
     # TODO: Replace with Cloudflare Images
     "https://#{S3_BUCKET}.s3.ap-northeast-1.amazonaws.com/#{self.s3_key}"
