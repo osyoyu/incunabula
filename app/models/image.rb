@@ -15,7 +15,7 @@ class Image < ApplicationRecord
   end
 
   def self.strip_exif!(path)
-    system('exiftool', '-overwrite_original_in_place', '-EXIF=', path, exception: true)
+    system('exiftool', '-overwrite_original_in_place', '-gps*=', path, exception: true)
   end
 
   def public_url
