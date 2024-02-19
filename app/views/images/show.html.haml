@@ -4,4 +4,8 @@
 Public URL
 = text_field_tag nil, @image.public_url, size: 80, disabled: true
 %br
-= image_tag @image.public_url
+Embed tag
+%br
+= text_area_tag nil, @embed_tag, rows: 5, cols: 100, wrap: 'off'
+%br
+= image_tag @image.public_url, style: "width: 100%;"
