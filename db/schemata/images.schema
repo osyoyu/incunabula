@@ -1,0 +1,8 @@
+create_table :images do |t|
+  t.string :original_filename, null: false
+  t.string :content_type, null: false
+  t.string :s3_key, null: false
+  t.timestamps
+end
+
+# vim: set ft=ruby :

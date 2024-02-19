@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :require_admin_secret, only: [:create, :update]
+  before_action :require_admin, only: [:create, :update]
 
   def index
     @entries = Entry.all.order(published_at: :desc)
@@ -48,12 +48,6 @@ class EntriesController < ApplicationController
       redirect_to entry_friendly_path(entry_path: @entry.entry_path)
     rescue ActiveRecord::RecordInvalid
       render :edit
-    end
-  end
-
-  private def require_admin_secret
-    if params[:incunabula_admin_secret] != ENV.fetch('INCUNABULA_ADMIN_SECRET')
-      render plain: "unauthorized", status: :unauthorized
     end
   end
 end

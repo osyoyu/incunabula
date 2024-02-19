@@ -1,0 +1,9 @@
+= form_with(url: images_path, method: :post, local: true) do |f|
+  %div
+    = f.file_field :file
+  %div
+    = f.label :secret, "Secret"
+    %br
+    = text_field_tag :incunabula_admin_secret
+  %div
+    = f.submit

@@ -26,6 +26,7 @@ RUN ruby -e 'puts RUBY_VERSION'
 
 RUN apt-get update && apt-get install -y \
   git \
+  libimage-exiftool-perl \
   libpq-dev \
   patch \
   pkg-config \
