@@ -18,9 +18,13 @@ class Image < ApplicationRecord
     system('exiftool', '-overwrite_original_in_place', '-gps*=', path, exception: true)
   end
 
-  def public_url
-    # TODO: Replace with Cloudflare Images
-    "https://#{S3_BUCKET}.s3.ap-northeast-1.amazonaws.com/#{self.s3_key}"
+  def public_url(resize_options = nil)
+    if resize_options
+      options_str = resize_options.map { |k, v| "#{k}=#{v}" }.join(',')
+      "https://#{Rails.configuration.x.image_distribution[:public_url_host]}/cdn-cgi/image/#{options_str}/#{self.s3_key}"
+    else
+      "https://#{Rails.configuration.x.image_distribution[:public_url_host]}/#{self.s3_key}"
+    end
   end
 
   # Assign a new S3 key and upload the blob.
