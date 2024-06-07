@@ -18,6 +18,7 @@ end
 
 group :development, :test do
   gem "debug"
+  gem "dotenv"
 
   gem "capybara"
   gem "factory_bot_rails"
