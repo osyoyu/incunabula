@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_action :require_admin, only: [:create, :update]
 
   def index
-    @entries = Entry.all.order(published_at: :desc)
+    @entries_by_year = Entry.all.order(published_at: :desc).group_by {|e| e.published_at.year }
   end
 
   def show
