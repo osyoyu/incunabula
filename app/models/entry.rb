@@ -15,6 +15,14 @@ class Entry < ApplicationRecord
   end
 
   def render_to_html
-    CommonMarker.render_html(self.body, [:DEFAULT, :HARDBREAKS, :UNSAFE, :FOOTNOTES], [:table]).html_safe
+    CommonMarker.render_html(
+      self.prerendered_body || self.body,
+      [:DEFAULT, :HARDBREAKS, :UNSAFE, :FOOTNOTES],
+      [:table]
+    ).html_safe
+  end
+
+  def prerender
+    self.prerendered_body = Rendering::Prerenderer.render(self.body)
   end
 end

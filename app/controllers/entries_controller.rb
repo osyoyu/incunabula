@@ -28,6 +28,7 @@ class EntriesController < ApplicationController
       published_at:,
       entry_path:,
     )
+    @entry.prerendered_body = Rendering::Prerenderer.render(@entry.body)
 
     ActiveRecord::Base.transaction do
       @entry.save!

@@ -135,6 +135,10 @@ GEM
     factory_bot_rails (6.4.3)
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
+    faraday (2.9.1)
+      faraday-net_http (>= 2.0, < 3.2)
+    faraday-net_http (3.1.0)
+      net-http
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -169,6 +173,8 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
+    net-http (0.4.1)
+      uri
     net-imap (0.4.8)
       date
       net-protocol
@@ -306,6 +312,7 @@ GEM
     tzinfo-data (1.2023.3)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.5.0)
+    uri (0.13.0)
     webrick (1.8.1)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
@@ -325,6 +332,7 @@ DEPENDENCIES
   debug
   dotenv
   factory_bot_rails
+  faraday
   haml
   pg (~> 1.1)
   puma (>= 5.0)
