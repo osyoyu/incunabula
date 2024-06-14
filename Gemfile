@@ -4,6 +4,7 @@ gem "rails", "~> 7.1.2"
 
 gem "aws-sdk-s3"
 gem "commonmarker", "~> 0.23"
+gem "faraday"
 gem "haml"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
@@ -29,4 +30,8 @@ end
 
 group :development do
   gem "rubocop"
+end
+
+group :test do
+  gem "webmock"
 end

@@ -1,4 +1,6 @@
 class Entry < ApplicationRecord
+  has_many :embed_links, dependent: :destroy
+
   scope :diary, -> { where(title: nil) }
   scope :not_diary, -> { where.not(title: nil) }
 
@@ -15,6 +17,15 @@ class Entry < ApplicationRecord
   end
 
   def render_to_html
-    CommonMarker.render_html(self.body, [:DEFAULT, :HARDBREAKS, :UNSAFE, :FOOTNOTES], [:table]).html_safe
+    rendered = Rendering::Renderer.render(body, self)
+    CommonMarker.render_html(
+      rendered,
+      [:DEFAULT, :HARDBREAKS, :UNSAFE, :FOOTNOTES],
+      [:table]
+    ).html_safe
+  end
+
+  def prerender
+    self.prerendered_body = Rendering::Prerenderer.render(self.body)
   end
 end
