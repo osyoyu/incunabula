@@ -31,3 +31,7 @@ end
 group :development do
   gem "rubocop"
 end
+
+group :test do
+  gem "webmock"
+end
