@@ -2,11 +2,11 @@ class EntriesController < ApplicationController
   before_action :require_admin, only: [:create, :update]
 
   def index
-    @entries_by_year = Entry.all.order(published_at: :desc).group_by {|e| e.published_at.year }
+    @entries_by_year = Entry.published.order(published_at: :desc).group_by {|e| e.published_at.year }
   end
 
   def show
-    @entry = Entry.includes(:embed_links).find_by!(entry_path: params[:entry_path])
+    @entry = Entry.includes(:embed_links).published.find_by!(entry_path: params[:entry_path])
     @body_html = @entry.render_to_html
   end
 
@@ -27,6 +27,7 @@ class EntriesController < ApplicationController
       body: params[:entry][:body],
       published_at:,
       entry_path:,
+      is_draft: params[:entry][:is_draft],
     )
 
     ActiveRecord::Base.transaction do
@@ -40,7 +41,7 @@ class EntriesController < ApplicationController
   end
 
   def update
-    entry_params = params.require(:entry).permit(:title, :body)
+    entry_params = params.require(:entry).permit(:title, :body, :is_draft)
 
     @entry = Entry.find(params[:id])
     @entry.assign_attributes(entry_params)

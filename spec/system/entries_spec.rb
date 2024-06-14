@@ -12,6 +12,22 @@ RSpec.describe 'Entries', type: :system do
         expect(page).to have_http_status(200)
       end
     end
+
+    context 'when draft entries exist' do
+      let!(:published) {
+        create(:entry, title: 'Published', entry_path: '2024/06/15/020000')
+      }
+      let!(:draft) {
+        create(:entry, title: 'Very draft', entry_path: '2024/06/15/030000', is_draft: true)
+      }
+
+      it 'does not show them' do
+        visit '/blog'
+        expect(page).to have_http_status(200)
+        expect(page).to have_content('Published')
+        expect(page).to_not have_content('Very draft')
+      end
+    end
   end
 
   describe '/blog/:entry_path' do
@@ -20,6 +36,17 @@ RSpec.describe 'Entries', type: :system do
       it 'responds with 200' do
         visit '/blog/2024/01/19/000000'
         expect(page).to have_http_status(200)
+      end
+    end
+
+    context 'when entry is a draft' do
+      let!(:draft) {
+        create(:entry, title: 'Very draft', entry_path: '2024/06/15/030000', is_draft: true)
+      }
+
+      it 'does not show them' do
+        visit '/blog/2024/06/15/030000'
+        expect(page).to have_http_status(404)
       end
     end
   end
