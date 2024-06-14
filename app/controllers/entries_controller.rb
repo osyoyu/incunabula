@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entry = Entry.find_by!(entry_path: params[:entry_path])
+    @entry = Entry.includes(:embed_links).find_by!(entry_path: params[:entry_path])
     @body_html = @entry.render_to_html
   end
 
