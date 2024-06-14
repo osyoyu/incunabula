@@ -4,6 +4,7 @@
     %meta{charset: "UTF-8"}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
     %link{rel: "stylesheet", href: "/blog-style.css"}
+    %link{rel: "stylesheet", href: "https://unpkg.com/prismjs@v1.29.0/themes/prism-tomorrow.min.css"}
 
     %meta{name: "twitter:card", content: "summary"}
     %meta{name: "twitter:site", content: "@osyoyu"}
@@ -16,6 +17,12 @@
     %meta{name: "og:url", content: request.original_url}
 
     %link{rel: "author", href: "http://www.hatena.ne.jp/tomo_ari/"}
+
+    %script{src: "https://unpkg.com/prismjs@v1.29.0/components/prism-core.min.js", defer: "defer"}
+      :plain
+
+    %script{src: "https://unpkg.com/prismjs@v1.29.0/plugins/autoloader/prism-autoloader.min.js", defer: "defer"}
+      :plain
 
     = render 'cloudflare_web_analytics'
 
