@@ -2,11 +2,11 @@ class EntriesController < ApplicationController
   before_action :require_admin, only: [:create, :update]
 
   def index
-    @entries_by_year = Entry.all.order(published_at: :desc).group_by {|e| e.published_at.year }
+    @entries_by_year = Entry.published.order(published_at: :desc).group_by {|e| e.published_at.year }
   end
 
   def show
-    @entry = Entry.includes(:embed_links).find_by!(entry_path: params[:entry_path])
+    @entry = Entry.includes(:embed_links).published.find_by!(entry_path: params[:entry_path])
     @body_html = @entry.render_to_html
   end
 
