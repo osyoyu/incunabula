@@ -1,4 +1,6 @@
 class Entry < ApplicationRecord
+  has_many :embed_links, dependent: :destroy
+
   scope :diary, -> { where(title: nil) }
   scope :not_diary, -> { where.not(title: nil) }
 
