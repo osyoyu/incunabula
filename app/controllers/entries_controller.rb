@@ -27,6 +27,7 @@ class EntriesController < ApplicationController
       body: params[:entry][:body],
       published_at:,
       entry_path:,
+      is_draft: params[:entry][:is_draft],
     )
 
     ActiveRecord::Base.transaction do
@@ -40,7 +41,7 @@ class EntriesController < ApplicationController
   end
 
   def update
-    entry_params = params.require(:entry).permit(:title, :body)
+    entry_params = params.require(:entry).permit(:title, :body, :is_draft)
 
     @entry = Entry.find(params[:id])
     @entry.assign_attributes(entry_params)

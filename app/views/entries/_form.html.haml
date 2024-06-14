@@ -6,6 +6,9 @@
   %div
     = f.text_area :body
   %div
+    = f.check_box :is_draft
+    draft?
+  %div
     = f.label :secret, "Secret"
     %br
     = text_field_tag :incunabula_admin_secret
