@@ -1,4 +1,4 @@
-module Rendering
+module Prerendering
   # A renderer to "prerender" some tags known to be time-consuming.
   #
   # There is no real need to split prerendering and online rendering,
@@ -10,8 +10,8 @@ module Rendering
       new.render(...)
     end
 
-    def render(markdown)
-      Rendering::TwitterUrlFilter.new.call(markdown)
+    def render(markdown, context_entry)
+      Prerendering::TwitterUrlFilter.new.call(markdown, context_entry)
     end
   end
 end

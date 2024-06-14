@@ -28,10 +28,11 @@ class EntriesController < ApplicationController
       published_at:,
       entry_path:,
     )
-    @entry.prerendered_body = Rendering::Prerenderer.render(@entry.body)
 
     ActiveRecord::Base.transaction do
       @entry.save!
+      Prerendering::Prerenderer.render(@entry.body, @entry)
+
       redirect_to entry_friendly_path(entry_path: @entry.entry_path)
     rescue ActiveRecord::RecordInvalid
       render :new
