@@ -1,5 +1,6 @@
 class Entry < ApplicationRecord
   has_many :embed_links, dependent: :destroy
+  has_one :import_source, dependent: :destroy
 
   scope :published, -> { where(is_draft: false) }
   scope :diary, -> { where(title: nil) }

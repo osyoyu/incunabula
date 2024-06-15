@@ -114,6 +114,11 @@ article header a:hover {
   transition: text-decoration 0.3s;
 }
 
+article header .import_source {
+  color: #666;
+  font-size: 0.9em;
+}
+
 article hr.header-main-divider {
   margin: 1.2em auto 1.2em 0;
   max-width: min(300px, 40%);
