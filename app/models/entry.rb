@@ -13,7 +13,7 @@ class Entry < ApplicationRecord
   end
 
   def published_at_formatted
-    published_at.strftime('%Y/%m/%d')
+    published_at.strftime('%Y/%-m/%-d')
   end
 
   def atom_feed_tag
