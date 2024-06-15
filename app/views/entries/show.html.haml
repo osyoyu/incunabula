@@ -1,4 +1,7 @@
 - content_for :head do
+  - if @entry.visibility_unlisted?
+    %meta{name: "robots", content: "noindex"}
+
   - if @entry.import_source != nil
     %link{rel: 'canonical', href: @entry.import_source.original_url}
 
