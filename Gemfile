@@ -13,10 +13,6 @@ gem "rss"
 gem "sprockets-rails"
 gem "tzinfo-data"
 
-group :production do
-  gem "ddtrace", require: 'ddtrace/auto_instrument'
-end
-
 group :development, :test do
   gem "debug"
   gem "dotenv"
