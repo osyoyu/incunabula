@@ -1,4 +1,7 @@
 - content_for :head do
+  - if @entry.import_source != nil
+    %link{rel: 'canonical', href: @entry.import_source.original_url}
+
   %script{src: "https://b.st-hatena.com/js/bookmark_button.js", async: "async"}
   %script{src: "https://s.hatena.ne.jp/js/HatenaStar.js", defer: "defer"}
   :javascript
