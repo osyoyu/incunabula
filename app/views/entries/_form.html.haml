@@ -6,8 +6,10 @@
   %div
     = f.text_area :body
   %div
-    = f.check_box :is_draft
-    draft?
+    = f.radio_button :visibility, "public"
+    public
+    = f.radio_button :visibility, "unlisted"
+    unlisted
   %div
     = f.label :secret, "Secret"
     %br

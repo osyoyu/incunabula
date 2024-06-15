@@ -13,12 +13,12 @@ RSpec.describe 'Entries', type: :system do
       end
     end
 
-    context 'when draft entries exist' do
+    context 'when unlisted entries exist' do
       let!(:published) {
-        create(:entry, title: 'Published', entry_path: '2024/06/15/020000')
+        create(:entry, title: 'Published', entry_path: '2024/06/15/020000', visibility: "public")
       }
-      let!(:draft) {
-        create(:entry, title: 'Very draft', entry_path: '2024/06/15/030000', is_draft: true)
+      let!(:unlisted) {
+        create(:entry, title: 'Very draft', entry_path: '2024/06/15/030000', visibility: "unlisted")
       }
 
       it 'does not show them' do
@@ -39,14 +39,14 @@ RSpec.describe 'Entries', type: :system do
       end
     end
 
-    context 'when entry is a draft' do
-      let!(:draft) {
-        create(:entry, title: 'Very draft', entry_path: '2024/06/15/030000', is_draft: true)
+    context 'even if entry is unlisted' do
+      let!(:unlisted) {
+        create(:entry, title: 'Very draft', entry_path: '2024/06/15/030000', visibility: "unlisted")
       }
 
-      it 'does not show them' do
+      it 'shows it' do
         visit '/blog/2024/06/15/030000'
-        expect(page).to have_http_status(404)
+        expect(page).to have_http_status(200)
       end
     end
   end
