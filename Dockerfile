@@ -17,10 +17,10 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir /tmp/ruby
 WORKDIR /tmp/ruby
 RUN \
-  curl -fsSL -o /tmp/ruby/ruby-3.3.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.2.tar.gz \
-  && echo "b49719ef383c581008c1fd3b68690f874f78557b /tmp/ruby/ruby-3.3.2.tar.gz" | sha1sum --check \
-  && tar -xzf ruby-3.3.2.tar.gz \
-  && cd /tmp/ruby/ruby-3.3.2 \
+  curl -fsSL -o /tmp/ruby/ruby-3.3.3.tar.gz https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.3.tar.gz \
+  && echo "b71971b141ee2325d99046a02291940fcca9830c /tmp/ruby/ruby-3.3.3.tar.gz" | sha1sum --check \
+  && tar -xzf ruby-3.3.3.tar.gz \
+  && cd /tmp/ruby/ruby-3.3.3 \
   && ./configure \
        --enable-shared \
        --enable-yjit=stats \
