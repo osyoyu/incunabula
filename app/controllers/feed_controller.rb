@@ -1,6 +1,6 @@
 class FeedController < ApplicationController
   def index
-    entries = Entry.all.order(published_at: :desc).limit(10)
+    entries = Entry.listable.order(published_at: :desc).limit(10)
     feed = RSS::Maker.make('atom') do |maker|
       maker.channel.id = "tag:osyoyu.com,2023:blog"
       maker.channel.title = "osyoyu.com/blog"
