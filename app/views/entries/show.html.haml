@@ -21,8 +21,13 @@
 %article
   %header.article-header
     %h1= link_to @entry.display_title, entry_friendly_path(entry_path: @entry.entry_path)
-    - if !@entry.title.nil?
+    - if @entry.title != nil
       .date= @entry.published_at_formatted
+
+    - if @entry.import_source != nil
+      .import_source
+        Original:
+        = @entry.import_source.original_url
 
   %hr.header-main-divider
 
