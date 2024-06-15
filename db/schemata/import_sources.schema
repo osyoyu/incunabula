@@ -1,0 +1,8 @@
+create_table :import_sources do |t|
+  t.references :entry, foreign_key: true
+  t.string :era
+  t.string :original_url
+  t.timestamps
+end
+
+# vim: set ft=ruby :
