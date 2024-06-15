@@ -1,8 +1,9 @@
-- @entries_by_year.each do |year, entries|
-  %h2= year
-  %table
-    %tbody
-      - entries.each do |entry|
-        %tr
-          %td= entry.published_at_formatted
-          %td= link_to(entry.display_title, entry_friendly_path(entry_path: entry.entry_path))
+.entries-list
+  - @entries_by_year.each do |year, entries|
+    %h2= year
+    %table
+      %tbody
+        - entries.each do |entry|
+          %tr
+            %td.published-at= entry.published_at_formatted
+            %td= link_to(entry.display_title, entry_friendly_path(entry_path: entry.entry_path))

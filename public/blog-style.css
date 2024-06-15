@@ -87,6 +87,16 @@ footer .privacy-notice {
   }
 }
 
+/* entries#index */
+
+.entries-list td {
+  padding: 0.25em 0.2em;
+}
+
+.entries-list td.published-at {
+  text-align: right;
+  vertical-align: top;
+}
 
 /* Article */
 
