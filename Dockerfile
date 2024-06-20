@@ -33,6 +33,7 @@ RUN ruby -e 'puts RUBY_VERSION'
 RUN apt-get update && apt-get install -y \
   git \
   libimage-exiftool-perl \
+  libjemalloc2 \
   libpq-dev \
   patch \
   pkg-config \
