@@ -107,7 +107,7 @@ footer .privacy-notice {
 /* Article */
 
 article {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6em;
   word-break: auto-phrase;
 }
@@ -142,15 +142,24 @@ article hr.header-main-divider {
 }
 
 article h2 {
-  margin-top: 0.7em;
+  margin-top: 1.2em;
   margin-bottom: 0.7em;
 
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+article h3 {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+
+  font-size: 16px;
   font-weight: 600;
   font-feature-settings: "palt";
 }
 
 article p {
+  margin-top: 0;
   margin-bottom: 1em;
 }
 
