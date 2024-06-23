@@ -4,7 +4,7 @@ class Preprocessor
   end
 
   def process!(entry)
-    markdown = entry.body
-    Preprocessor::TwitterUrlFilter.new.call(markdown, entry)
+    Preprocessor::UrlFilter.new.call(entry.body, entry)
+    true
   end
 end
