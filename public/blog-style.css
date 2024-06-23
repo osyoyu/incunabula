@@ -1,6 +1,10 @@
 /* Site-global */
 
 body {
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
   font-weight: 400;
 
@@ -8,7 +12,7 @@ body {
 }
 
 header.site-header {
-  max-width: min(950px, calc(100% - 80px)); /* 40px on each side */
+  max-width: min(760px, calc(100% - 60px)); /* leave 30px on each side */
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
@@ -42,14 +46,14 @@ header a {
 }
 
 main {
-  max-width: min(950px, calc(100% - 80px)); /* 40px on each side */
+  max-width: min(760px, calc(100% - 60px)); /* leave 30px on each side */
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
 }
 
 footer.site-footer {
-  max-width: min(950px, calc(100% - 80px)); /* 40px on each side */
+  max-width: min(760px, calc(100% - 60px)); /* leave 30px on each side */
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
@@ -66,8 +70,8 @@ footer .privacy-notice {
 @media screen and (max-width: 480px) {
   header.site-header {
     max-width: 100%;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-top: 50px;
     margin-bottom: 50px;
   }
@@ -78,8 +82,8 @@ footer .privacy-notice {
 
   main {
     max-width: 100%;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   footer.site-footer {
