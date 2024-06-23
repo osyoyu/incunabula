@@ -1,0 +1,13 @@
+create_table :link_embeds do |t|
+  t.references :entry, foreign_key: true
+  t.string :url, null: false
+  t.string :title
+  t.string :description
+  t.string :image_url
+  t.string :site_name
+  t.timestamps
+
+  t.index [:entry_id, :url], unique: true
+end
+
+# vim: set ft=ruby :
