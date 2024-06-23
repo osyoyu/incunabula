@@ -103,5 +103,40 @@ RSpec.describe 'Entries', type: :system do
         expect(page).to have_text('Nice content')
       end
     end
+
+    context 'When the entry has generic URL embeds' do
+      before do
+        stub_request(:get, "https://osyoyu.com/")
+          .to_return(
+            status: 200,
+            body: "<html><head><meta property='og:title' content='osyoyu.com title'></head></html>"
+          )
+      end
+
+      it 'renders a link card' do
+        expect(Entry.count).to eq(0)
+        expect(LinkEmbed.count).to eq(0)
+
+        visit '/blog/entries/new'
+
+        fill_in 'entry[title]', with: 'Nice title'
+        fill_in 'entry[body]', with: <<~__EOS__
+          Nice content
+          [https://osyoyu.com/:embed]
+        __EOS__
+        fill_in 'incunabula_admin_secret', with: ENV['INCUNABULA_ADMIN_SECRET']
+        click_on 'Create Entry'
+
+        expect(Entry.count).to eq(1)
+        expect(LinkEmbed.count).to eq(1)
+        link_embed = LinkEmbed.last
+        expect(link_embed.url).to eq('https://osyoyu.com/')
+        expect(link_embed.title).to eq('osyoyu.com title')
+
+        expect(page).to have_text('Nice title')
+        expect(page).to have_text('osyoyu.com title')
+        expect(page).to have_text('Nice content')
+      end
+    end
   end
 end
