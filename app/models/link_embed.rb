@@ -28,4 +28,29 @@ class LinkEmbed < ApplicationRecord
 
     self.save!
   end
+
+  def as_html
+    uri = URI.parse(self.url)
+
+    <<-__EOS__
+<div class="embedded-link-card">
+  <div class="embedded-link-card-content">
+    <div class="embedded-link-card-title">
+      <strong><a href="#{self.url}" target="_blank">#{self.title}</a></strong>
+    </div>
+    <div class="embedded-link-card-description">#{self.description&.truncate(80)}</div>
+    <div class="embedded-link-card-host">#{uri.host}</div>
+  </div>
+#{if self.image_url
+    "<div class=\"embedded-link-card-image\">
+  <a href=\"#{self.url}\" target=\"_blank\">
+    <img src=\"#{self.image_url}\" />
+  </a>
+</div>"
+else
+  ""
+end}
+</div>
+__EOS__
+  end
 end
