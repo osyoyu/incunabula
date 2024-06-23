@@ -29,7 +29,7 @@ class Entry < ApplicationRecord
     ).html_safe
   end
 
-  def prerender
-    self.prerendered_body = Rendering::Prerenderer.render(self.body)
+  def preprocess!
+    Preprocessor.process!(self)
   end
 end

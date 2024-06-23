@@ -1,4 +1,4 @@
-module Prerendering
+class Preprocessor
   class TwitterUrlFilter
     REGEX = %r{\[(https://(?:twitter|x)\.com/[0-9a-zA-Z_]+/status/\d+/?):embed\]}
 
