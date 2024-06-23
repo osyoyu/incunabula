@@ -5,7 +5,7 @@ module Rendering
     end
 
     def render(markdown, context_entry)
-      Rendering::EmbedLinksFilter.new.call(markdown, context_entry)
+      Rendering::LinkEmbedsFilter.new.call(markdown, context_entry)
     end
   end
 end

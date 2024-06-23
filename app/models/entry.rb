@@ -1,5 +1,6 @@
 class Entry < ApplicationRecord
   has_many :embed_links, dependent: :destroy
+  has_many :link_embeds, dependent: :destroy
   has_one :import_source, dependent: :destroy
 
   scope :listable, -> { where(visibility: "public") }
@@ -29,7 +30,7 @@ class Entry < ApplicationRecord
     ).html_safe
   end
 
-  def prerender
-    self.prerendered_body = Rendering::Prerenderer.render(self.body)
+  def preprocess!
+    Preprocessor.process!(self)
   end
 end

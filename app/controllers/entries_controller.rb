@@ -32,7 +32,7 @@ class EntriesController < ApplicationController
 
     ActiveRecord::Base.transaction do
       @entry.save!
-      Prerendering::Prerenderer.render(@entry.body, @entry)
+      @entry.preprocess!
 
       redirect_to entry_friendly_path(entry_path: @entry.entry_path)
     rescue ActiveRecord::RecordInvalid
@@ -48,6 +48,7 @@ class EntriesController < ApplicationController
 
     ActiveRecord::Base.transaction do
       @entry.save!
+      @entry.preprocess!
       redirect_to entry_friendly_path(entry_path: @entry.entry_path)
     rescue ActiveRecord::RecordInvalid
       render :edit
