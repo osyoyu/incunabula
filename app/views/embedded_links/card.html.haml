@@ -2,8 +2,8 @@
   .embedded-link-card-content
     .embedded-link-card-title
       %strong
-        = link_to link.title, link.url, target: "_blank"
-    .embedded-link-card-description= link.description&.truncate(80)
+        = link_to link.title&.gsub(/\n+/, " "), link.url, target: "_blank"
+    .embedded-link-card-description= link.description&.truncate(80)&.gsub(/\n+/, " ")
     .embedded-link-card-host= host
 
   - if link.image_url
