@@ -288,6 +288,9 @@ GEM
       ruby-lsp (~> 0.17.0)
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
+    sentry-ruby (5.18.0)
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     sorbet-runtime (0.5.11435)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -340,6 +343,7 @@ DEPENDENCIES
   rss
   rubocop
   ruby-lsp-rspec
+  sentry-ruby
   sprockets-rails
   tzinfo-data
   webmock

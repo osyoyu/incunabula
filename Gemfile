@@ -10,6 +10,7 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "ridgepole"
 gem "rss"
+gem "sentry-ruby"
 gem "sprockets-rails"
 gem "tzinfo-data"
 
