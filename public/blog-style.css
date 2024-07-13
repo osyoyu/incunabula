@@ -162,10 +162,16 @@ article h3 {
 article p {
   margin-top: 0;
   margin-bottom: 1em;
+
+  font-family: "Palatino Linotype", "Palatino", "Hiragino Mincho Pro", "Toppan Bunkyu Mincho", serif;
 }
 
 article a {
   color: #131384;
+}
+
+article p strong {
+  font-family: "Toppan Bunkyu Gothic", serif;
 }
 
 .embedded-link-card {
