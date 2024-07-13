@@ -35,8 +35,8 @@
     %header.site-header
       = link_to root_path do
         .logotype
-          %span.osyoyucom> osyoyu.com/
-          %span.blog blog
+          %object{data: "/blog-logotype.svg", type: "image/svg+xml", aria: {label: "osyoyu.com/blog"}}
+            osyoyu.com/blog
 
     %main
       = yield
