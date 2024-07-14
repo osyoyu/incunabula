@@ -14,6 +14,8 @@ gem "sentry-ruby"
 gem "sprockets-rails"
 gem "tzinfo-data"
 
+gem "pf2"
+
 group :development, :test do
   gem "debug"
   gem "dotenv"

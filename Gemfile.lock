@@ -183,6 +183,10 @@ GEM
     parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
+    pf2 (0.6.0)
+      rake-compiler
+      rb_sys (~> 0.9.63)
+      webrick
     pg (1.5.4)
     prism (0.30.0)
     psych (5.1.1.1)
@@ -229,7 +233,10 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
-    rake (13.1.0)
+    rake (13.2.1)
+    rake-compiler (1.2.7)
+      rake
+    rb_sys (0.9.98)
     rbs (3.5.1)
       logger
     rdoc (6.6.1)
@@ -334,6 +341,7 @@ DEPENDENCIES
   factory_bot_rails
   faraday
   haml
+  pf2
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.2)
