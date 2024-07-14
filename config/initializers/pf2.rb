@@ -29,11 +29,11 @@ if ENV['PF2_CONTINUOUS_PROFILING'].to_i == 1
 
       s3.put_object(
         bucket: 'osyoyu-pf2prof',
-        key: "incunabula-#{Time.now.to_i}.firefoxprofiler.json",
+        key: "incunabula-latest.firefoxprofiler.json",
         body: report,
         content_type: 'application/json'
       )
-      Rails.logger.debug("Pf2: Written to S3")
+      Rails.logger.info("Pf2: Written to S3")
     end
   }
 end
