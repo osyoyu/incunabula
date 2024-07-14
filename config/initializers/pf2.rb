@@ -9,7 +9,7 @@ if ENV['PF2_CONTINUOUS_PROFILING'].to_i == 1
       profiler = Pf2::Session.new(
         scheduler: :signal,
         threads: :all,
-        time_mode: :wall,
+        time_mode: ENV.fetch('PF2_CONTINUOUS_PROFILING_TIME_MODE', 'wall').to_sym,
         interval_ms: ENV.fetch('PF2_CONTINUOUS_PROFILING_INTERVAL_MS', "49").to_i
       )
       profiler.start
