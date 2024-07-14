@@ -31,6 +31,7 @@ RUN ruby -e 'puts RUBY_VERSION'
 
 
 RUN apt-get update && apt-get install -y \
+  clang \
   git \
   libimage-exiftool-perl \
   libjemalloc2 \
@@ -45,5 +46,7 @@ WORKDIR /app
 
 COPY Gemfile Gemfile.lock /app/
 RUN bundle install -j$(nproc)
+
+RUN mkdir -p /app/tmp/pids
 
 COPY . /app
