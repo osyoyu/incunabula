@@ -48,5 +48,8 @@ COPY Gemfile Gemfile.lock /app/
 RUN bundle install -j$(nproc)
 
 RUN mkdir -p /app/tmp/pids
+RUN mkdir -p /app/tmp/pf2prof
+RUN mkdir -p /app/tmp/cache
+RUN mkdir -p /app/tmp/storage
 
 COPY . /app
