@@ -9,7 +9,7 @@ if ENV['PF2_CONTINUOUS_PROFILING'].to_i == 1
       profiler = Pf2::Session.new(
         scheduler: :signal,
         threads: :all,
-        time_mode: :wall,
+        time_mode: :cpu,
         interval_ms: 9,
       )
       profiler.start
@@ -27,12 +27,6 @@ if ENV['PF2_CONTINUOUS_PROFILING'].to_i == 1
       end
       report = stdout
 
-      s3.put_object(
-        bucket: 'osyoyu-pf2prof',
-        key: 'incunabula-latest.firefoxprofiler.json',
-        body: report,
-        content_type: 'application/json'
-      )
       s3.put_object(
         bucket: 'osyoyu-pf2prof',
         key: "incunabula-#{Time.now.to_i}.firefoxprofiler.json",
