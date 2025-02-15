@@ -10,7 +10,7 @@ RSpec.describe Image, type: :model do
           s3_key: '20240606095000_25e616570eb9.jpg'
         )
 
-        expect(image.public_url({ width: 480 })).to eq('https://static.osyoyu.com/cdn-cgi/image/width=480/20240606095000_25e616570eb9.jpg')
+        expect(image.public_url({ width: 480 })).to eq('https://static.example.com/cdn-cgi/image/width=480/20240606095000_25e616570eb9.jpg')
       end
     end
 
@@ -22,7 +22,7 @@ RSpec.describe Image, type: :model do
           s3_key: '20240606095000_25e616570eb9.jpg'
         )
 
-        expect(image.public_url).to eq('https://static.osyoyu.com/20240606095000_25e616570eb9.jpg')
+        expect(image.public_url).to eq('https://static.example.com/20240606095000_25e616570eb9.jpg')
       end
     end
   end
