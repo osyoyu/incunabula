@@ -50,4 +50,6 @@ WORKDIR /app
 COPY Gemfile Gemfile.lock /app/
 RUN bundle install -j$(nproc)
 
+RUN mkdir -p /app/tmp/pids && mkdir -p /app/tmp/cache
+
 COPY . /app
