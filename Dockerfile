@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
   cargo \
   curl \
   gcc \
+  libffi-dev \
   libssh-dev \
   libyaml-dev \
   make \
@@ -17,16 +18,19 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir /tmp/ruby
 WORKDIR /tmp/ruby
 RUN \
-  curl -fsSL -o /tmp/ruby/ruby-3.3.3.tar.gz https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.3.tar.gz \
-  && echo "b71971b141ee2325d99046a02291940fcca9830c /tmp/ruby/ruby-3.3.3.tar.gz" | sha1sum --check \
-  && tar -xzf ruby-3.3.3.tar.gz \
-  && cd /tmp/ruby/ruby-3.3.3 \
+  curl -fsSL -o /tmp/ruby/ruby-3.4.2.tar.gz https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.2.tar.gz \
+  && echo "1537911b4a47940f11c309898e04187344a43167 /tmp/ruby/ruby-3.4.2.tar.gz" | sha1sum --check \
+  && tar -xzf ruby-3.4.2.tar.gz \
+  && cd /tmp/ruby/ruby-3.4.2 \
   && ./configure \
        --enable-shared \
+       --with-ext=openssl,psych,+ \
        --enable-yjit=stats \
        --disable-install-doc \
   && make -j$(nproc) \
-  && make install
+  && make install \
+  && rm -rf /tmp/ruby \
+  && rm -rf /root/.cargo
 RUN ruby -e 'puts RUBY_VERSION'
 
 
