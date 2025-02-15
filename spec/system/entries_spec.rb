@@ -60,7 +60,7 @@ RSpec.describe 'Entries', type: :system do
 
         fill_in 'entry[title]', with: 'Nice title'
         fill_in 'entry[body]', with: 'Nice content'
-        fill_in 'incunabula_admin_secret', with: ENV['INCUNABULA_ADMIN_SECRET']
+        fill_in 'incunabula_admin_secret', with: Rails.configuration.x.admin_secret
         click_on 'Create Entry'
 
         expect(Entry.count).to eq(1)
@@ -90,7 +90,7 @@ RSpec.describe 'Entries', type: :system do
           Nice content
           [https://twitter.com/osyoyu/status/1234567890:embed]
         __EOS__
-        fill_in 'incunabula_admin_secret', with: ENV['INCUNABULA_ADMIN_SECRET']
+        fill_in 'incunabula_admin_secret', with: Rails.configuration.x.admin_secret
         click_on 'Create Entry'
 
         expect(Entry.count).to eq(1)
@@ -124,7 +124,7 @@ RSpec.describe 'Entries', type: :system do
           Nice content
           [https://osyoyu.com/:embed]
         __EOS__
-        fill_in 'incunabula_admin_secret', with: ENV['INCUNABULA_ADMIN_SECRET']
+        fill_in 'incunabula_admin_secret', with: Rails.configuration.x.admin_secret
         click_on 'Create Entry'
 
         expect(Entry.count).to eq(1)

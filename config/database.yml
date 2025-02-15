@@ -13,11 +13,8 @@ development:
 
 test:
   <<: *default
-  database: incunabula_test
-  host: 127.0.0.1
-  port: 15432
-  username: incunabula
-  password: pasuwado
+  url: <%= ENV['DATABASE_URL'] || 'postgres://incunabula@127.0.0.1:15432/incunabula_test' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || 'pasuwado' %>
 
 production:
   <<: *default
