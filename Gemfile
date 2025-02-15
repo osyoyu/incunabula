@@ -14,6 +14,11 @@ gem "sentry-ruby"
 gem "sprockets-rails"
 gem "tzinfo-data"
 
+# Temporary for Ruby 3.5 (3.4?) compat
+gem "benchmark"
+gem "fiddle"
+gem "ostruct"
+
 group :development, :test do
   gem "debug"
   gem "dotenv"
