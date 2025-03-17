@@ -12,7 +12,6 @@ gem "ridgepole"
 gem "rss"
 gem "sentry-ruby"
 gem "sprockets-rails"
-gem "tzinfo-data"
 
 # Temporary for Ruby 3.5 (3.4?) compat
 gem "benchmark"
