@@ -7,7 +7,7 @@ class Entry < ApplicationRecord
   scope :diary, -> { where(title: nil) }
   scope :not_diary, -> { where.not(title: nil) }
 
-  enum visibility: { public: "public", unlisted: "unlisted" }, _prefix: true  # no private state now
+  enum :visibility, { public: "public", unlisted: "unlisted" }, prefix: true  # no private state now
 
   def display_title
     title.nil? ? published_at_formatted : title
