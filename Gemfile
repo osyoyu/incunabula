@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 7.1.2"
+gem "rails", "~> 8.0.2"
 
 gem "aws-sdk-s3"
 gem "commonmarker", "~> 0.23"
