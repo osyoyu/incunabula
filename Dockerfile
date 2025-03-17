@@ -42,7 +42,8 @@ RUN apt-get update && apt-get install -y \
   patch \
   pkg-config \
   postgresql-client \
-  xz-utils
+  xz-utils \
+  tzdata
 
 RUN mkdir /app
 WORKDIR /app

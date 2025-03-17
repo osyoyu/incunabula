@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 7.1.2"
+gem "rails", "~> 8.0.2"
 
 gem "aws-sdk-s3"
 gem "commonmarker", "~> 0.23"
@@ -12,11 +12,11 @@ gem "ridgepole"
 gem "rss"
 gem "sentry-ruby"
 gem "sprockets-rails"
-gem "tzinfo-data"
 
 # Temporary for Ruby 3.5 (3.4?) compat
 gem "benchmark"
 gem "fiddle"
+gem "mutex_m"
 gem "ostruct"
 
 group :development, :test do
